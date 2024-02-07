@@ -31,7 +31,7 @@ const con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "signup",
+  database: "Timesheet",
 });
 
 const con1 = mysql.createConnection({
@@ -981,6 +981,36 @@ app.post("/filterTimeSheet", (req, res) => {
     return res.json(results);
   });
 });
+
+app.post("/filterTimeSheetbyname", (req, res) => {
+  console.log(req.body, "reqbodadasdy");
+
+  if (
+    !req.body.userId ||
+    !req.body.logDates ||
+    !Array.isArray(req.body.logDates)
+  ) {
+    return res
+      .status(400)
+      .json({ error: "userId and an array of logDates are required." });
+  }
+
+  // Create a comma-separated string of dates for the SQL query
+  const dateList = req.body.logDates.map((date) => `'${date}'`).join(",");
+
+  const sql = `SELECT *, DATE_FORMAT(LogDate, '%Y-%m-%d %H:%i:%s') AS FormattedLogDate FROM devicelogsinfo  WHERE DATE(LogDate) IN (${dateList})  AND UserId = ?`;
+
+  // Execute the SQL query with parameters
+  con1.query(sql, [req.body.userId], (err, results) => {
+    if (err) {
+      console.error("Error executing SQL query:", err);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+
+    return res.json(results);
+  });
+});
+
 
 app.get("/getProject", (req, res) => {
   const sql = "SELECT * FROM project";

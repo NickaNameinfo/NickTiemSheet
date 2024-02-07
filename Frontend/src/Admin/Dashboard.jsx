@@ -146,6 +146,12 @@ function Dashboard() {
                   </Link>
                 </li>
                 <li>
+                  <span className="material-symbols-outlined fs-5 bi-collection"></span>
+                  <Link to="/Dashboard/Inandout">
+                    <span className="txt_col">IN & OUT</span>
+                  </Link>
+                </li>
+                <li>
                   <span className="material-symbols-outlined fs-5 bi-person-workspace"></span>
                   <Link to="/Dashboard/TeamLeadProjectWorks">
                     <span className="txt_col">Project Work Details</span>

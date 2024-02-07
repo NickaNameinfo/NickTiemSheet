@@ -27,50 +27,55 @@ function Start() {
   return (
     <>
       <div className="vh-100 loginPage">
-        <div className="w-100 h-100 ">
-          <div className="row h-100">
-            <div className="col-sm-4 p-0">
-              <div className="startDesign"> 
-                <div className="w-100">
-                  <div className="four">
-                  <h3 className="text-center updatetag ">
-                    Updates
-                  </h3>
-                  </div>
-                  <marquee direction="up"   scrollamount="5">
-                    {rowData?.map((res) => {
-                      return (
-                        <div className="updates" key={res.id}>
-                          <div>
-                            <h4>{res?.updateTitle}</h4>
-                            <p className="m-0">{res?.UpdateDisc}</p>
-                          </div>
+        <div className="row h-100">
+          <div className="col-sm-4 p-0">
+            <div className="startDesign">
+              <div className="position-relative w-100">
+                <div className="four">
+                  <h3 className="text-center updatetag ">Updates</h3>
+                </div>
+                <marquee direction="up" scrollamount="5">
+                  {rowData?.map((res) => {
+                    return (
+                      <div className="updates" key={res.id}>
+                        <div>
+                          <h4>{res?.updateTitle}</h4>
+                          <p className="m-0">{res?.UpdateDisc}</p>
                         </div>
-                      );
-                    })}
-                  </marquee>
-                  <div className="support-info">
+                      </div>
+                    );
+                  })}
+                </marquee>
+                <div className="support-info">
                   <div className="support-team">
-                    <img src="http://localhost:5173/src/assets/technical-support.png" alt="" />
-                    <p><b>Email :</b>nicknameinfotec@gmail</p>
-                    <p><b>Mobile no :</b>8270564998</p>
+                    <div className="supImg">
+                      <img
+                        src={`${commonData?.BASEURL}/src/assets/technical-support.png`}
+                        width={"100%"}
+                      />
+                    </div>
+                    <p>
+                      <b>Email :</b>nicknameinfotec@gmail
+                    </p>
+                    <p>
+                      <b>Mobile no :</b>8270564998
+                    </p>
                   </div>
-                  </div>
-           
                 </div>
               </div>
             </div>
-            <div className="col-sm-4 p-0">
-              <div className="center-sec">
+          </div>
+          <div className="col-sm-4 p-0">
+            <div className="center-sec">
               <div class="three">
-              <h3 className="announcement ">Announcement</h3>
-            </div>
-              
+                <h3 className="announcement ">Announcement</h3>
+              </div>
+
               <div className="flashUpdate">
                 <p>{lastValue?.Announcements}</p>
               </div>
-              </div>
-              {/* <div className="banner">
+            </div>
+            {/* <div className="banner">
                 <div
                   id="carouselExampleInterval"
                   className="carousel slide"
@@ -92,22 +97,20 @@ function Start() {
               
                 </div>
               </div> */}
-        
-            </div>
-            <div className="col-sm-4 p-0">
-              <div className="startDesign updatemarquee">
+          </div>
+          <div className="col-sm-4 p-0">
+            <div className="startDesign updatemarquee">
+              <div className="w-100">
                 <div className="w-100">
-                  <div className="w-100">
-                    <div className="d-flex align-items-center justify-content-center h-100 flex-column">
-                      <div className="w-100 text-center logo-clips">
-                        
-                        <img
-                          src={`${commonData?.BASEURL}/src/assets/new-logo.png`}
-                          width={150}
-                        />
-                      </div>
+                  <div className="d-flex align-items-center justify-content-center h-100 flex-column">
+                    <div className="w-100 text-center logo-clips">
+                      <img
+                        src={`${commonData?.BASEURL}/src/assets/logo.png`}
+                        width={150}
+                      />
+                    </div>
 
-                      {/* <ul className="updateslist">
+                    {/* <ul className="updateslist">
                         <li>
                           <a href={`${lastValue?.Circular}`} target="_blank">
                             Circular
@@ -124,12 +127,11 @@ function Start() {
                           </a>
                         </li>
                       </ul> */}
-                    </div>
                   </div>
-                  <div className="log-form">
-                    <div className="loginSection">
-                      <Login />
-                    </div>
+                </div>
+                <div className="log-form">
+                  <div className="loginSection">
+                    <Login />
                   </div>
                 </div>
               </div>

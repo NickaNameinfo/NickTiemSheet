@@ -67,12 +67,11 @@ function EmployeeHome() {
     localStorage.setItem("leaveDetails", JSON.stringify(leaveDetails));
   }, [vacationLeave, sickLeave, earned, compOffLeave]);
 
-  React,
-    useEffect(() => {
-      if (weekData) {
-        getInOutTime(weekData);
-      }
-    }, [weekData]);
+  React.useEffect(() => {
+    if (weekData) {
+      getInOutTime(weekData);
+    }
+  }, [weekData]);
 
   const getWorkMonth = (startDateString, endDateString) => {
     const currentDate = new Date();
@@ -161,9 +160,11 @@ function EmployeeHome() {
             .post(`${commonData?.APIKEY}/dashboard`, { tokensss: token })
             .then((result) => {
               let tempFinalResult = res?.data?.Result?.filter(
-                (res) => res?.leaveStatus === "approved" && res.employeeId === result?.data?.employeeId
+                (res) =>
+                  res?.leaveStatus === "approved" &&
+                  res.employeeId === result?.data?.employeeId
               );
-              console.log(tempFinalResult, "tempFinalResult")
+              console.log(tempFinalResult, "tempFinalResult");
               const totalLeaveHoursByType = {};
 
               tempFinalResult?.forEach((leave) => {
