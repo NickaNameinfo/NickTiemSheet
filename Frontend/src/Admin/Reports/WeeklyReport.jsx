@@ -5,6 +5,7 @@ import axios from "axios";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import commonData from "../../../common.json";
+import { Chip, MenuItem, Select } from "@mui/material";
 
 const WeeklyReport = () => {
   const containerStyle = { width: "100%", height: "100%" };
@@ -13,12 +14,26 @@ const WeeklyReport = () => {
   const [workDetails, setWorkDetails] = useState([]);
   const [projectWorkHours, setProjectWorkHours] = React.useState(null);
   const [exportApi, setExportApi] = React.useState(null);
+  const [selectedYear, setSelectedYear] = React.useState(
+    new Date().getFullYear()
+  );
+  const [years, setYears] = React.useState(null);
 
   console.log(workDetails, "workDetailsworkDetails", projectDetails);
   React.useEffect(() => {
     onGetWorkDetails();
     onGridReady();
-  }, []);
+  }, [selectedYear]);
+
+  useEffect(() => {
+    let currentYear = new Date().getFullYear();
+    const startYear = 2000;
+    const years = Array.from(
+      { length: currentYear - startYear + 1 },
+      (_, index) => startYear + index
+    );
+    setYears(years);
+  }, [selectedYear]);
 
   React.useEffect(() => {
     const projectData = workDetails.reduce((acc, entry) => {
@@ -48,7 +63,11 @@ const WeeklyReport = () => {
       .get(`${commonData?.APIKEY}/getProject`)
       .then((res) => {
         if (res.data.Status === "Success") {
-          setProjectDetails(res.data.Result);
+          let tempResult = res.data.Result.filter(
+            (item) => new Date(item.startDate).getFullYear() === selectedYear
+          );
+          console.log(tempResult, "tempResult453")
+          setProjectDetails(tempResult);
         } else {
           alert("Error");
         }
@@ -62,8 +81,11 @@ const WeeklyReport = () => {
       .then((res) => {
         if (res.data.Status === "Success") {
           let resultData = res.data.Result?.filter(
-            (item) => item.status === "approved"
+            (item) =>
+              item.status === "approved" &&
+              new Date(item.approvedDate).getFullYear() === selectedYear
           );
+          console.log(resultData, "resultData452345", selectedYear);
           setWorkDetails(resultData);
         } else {
           alert("Error");
@@ -129,7 +151,7 @@ const WeeklyReport = () => {
       { field: "desciplineCode", headerName: "Discipline Code" },
       ...weekFields, // Include dynamically generated week fields
     ];
-  }, [projectWorkHours]);
+  }, [projectWorkHours, workDetails]);
 
   const autoGroupColumnDef = useMemo(
     () => ({
@@ -186,6 +208,24 @@ const WeeklyReport = () => {
         >
           Export{" "}
         </Button>
+        <Chip
+          label="Clear Filter"
+          onClick={() => {
+            setSelectedYear(new Date().getFullYear());
+          }}
+          color={"warning"}
+          className="me-3"
+        />
+        <Select
+          className="noPaddingInput mb-3"
+          value={selectedYear}
+          defaultValue={selectedYear}
+          onChange={(e, value) => setSelectedYear(value.props.value)}
+        >
+          {years?.map((res) => (
+            <MenuItem value={res}>{res}</MenuItem>
+          ))}
+        </Select>
         <div style={gridStyle} className="ag-theme-alpine leavetable">
           <AgGridReact
             rowData={projectDetails}

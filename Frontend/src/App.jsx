@@ -149,13 +149,13 @@ function App() {
           ></Route>
         </Route>
 
-        <Route path="/Employee" element={<EmployeeDashboard />}></Route>
+        {/* <Route path="/Employee" element={<EmployeeDashboard />}></Route>
 
         <Route path="/TeamLead" element={<TeamLeadDashboard />}></Route>
 
         <Route path="/Hr" element={<HrDashboard />}></Route>
 
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/login" element={<Login />}></Route> */}
       </Routes>
     </BrowserRouter>
   );

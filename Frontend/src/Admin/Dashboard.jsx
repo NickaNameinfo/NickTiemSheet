@@ -16,7 +16,9 @@ function Dashboard() {
       .post(`${commonData?.APIKEY}/dashboard`, { tokensss: token })
       .then((res) => {
         console.log(res, "resresresres12345");
-        if (res.data.Status === "Success") {
+        if (!res.data.role) {
+          navigate("/");
+        } else {
           setRoles(res.data.role?.split(","));
         }
       });
