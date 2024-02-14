@@ -50,6 +50,11 @@ import CompOffLIst from "./Admin/compOffLIst";
 import ConsolidatedReport from "./Admin/Reports/ConsolidatedReport";
 import EmployeeReport from "./Admin/Reports/EmployeeReport";
 import Attendance from "./Admin/Attendance";
+import Hrms from "./Hrms/Hrms";
+import Navbar from "./component/Navbar";
+import Form from "./Hrms/form/Form";
+import FormDataList from "./Hrms/form/Formdatalist";
+
 
 function App() {
   return (
@@ -65,6 +70,11 @@ function App() {
           <Route path="/Dashboard/Discipline" element={<Discipline />}></Route>
           <Route path="/Dashboard/Areaofwork" element={<Areaofwork />}></Route>
           <Route path="/Dashboard/Variations" element={<Variations />}></Route>
+          <Route path="/Dashboard/Hrms">
+                <Route path="" index element={<Hrms />}/>
+                <Route path="/Dashboard/Hrms/Form"  element={<Form />}/>
+                <Route path="/Dashboard/Hrms/FormDataList"  element={< FormDataList/>}/>
+          </Route>
           <Route
             path="/Dashboard/Designation"
             element={<Designation />}
@@ -147,6 +157,12 @@ function App() {
             path="/Dashboard/TeamLeadProjectWorks"
             element={<ProjectWorkDetails />}
           ></Route>
+       
+          <Route
+            path="/Dashboard/TeamLeadProjectWorks"
+            element={<ProjectWorkDetails />}
+          ></Route>
+      
         </Route>
 
         <Route path="/Employee" element={<EmployeeDashboard />}></Route>
@@ -156,6 +172,7 @@ function App() {
         <Route path="/Hr" element={<HrDashboard />}></Route>
 
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/navbar" element={<Navbar />}></Route>
       </Routes>
     </BrowserRouter>
   );

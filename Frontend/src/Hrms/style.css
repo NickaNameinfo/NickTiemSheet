@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hrms login form start*/
+.card-body {
+  padding-top: 0;
+}
+
+.card-body .hrms-submit-button {
+  background-color: #FEBD11;
+  color: black;
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  width: 200px;
+  font-weight: 600;
+}
+
+.card .card-header {
+  border-bottom: none;
+}
+
+.card-body .form-control {
+  padding: 15px;
+}
+
+.hrms-form-submit-button {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.hrms-submit-button:hover {
+  background-color: #6aa558 !important;
+  color: white;
+}
+
+/* .google-login a{
+    text-decoration: none;
+} */
+.hrms-form-icons i {
+  font-size: 25px;
+}
+
+.hrms-form-icons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-control {
+  border-radius: 30px !important;
+}
+
+.google-login a {
+  text-decoration: none;
+  border: 1px solid;
+  padding: 15px;
+  border-radius: 30px;
+  border-color: #dfdfdf;
+  color: black;
+  /* padding-left: 150px;
+    padding-right: 150px; */
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.card {
+  border-radius: 50px !important;
+  height: 548px !important;
+}
+
+.hrms-left-banner img {
+  width: 100%;
+  height: 548px;
+  border-radius: 50px 0px 0px 50px;
+  border: 8px solid;
+  border-color: #6aa558;
+
+}
+
+.hrms-left-banner {
+  padding-right: 0 !important;
+}
+
+.hrms-left-banner-1 {
+
+  position: absolute;
+  margin-left: 600px;
+  /* margin-right: 10px; */
+}
+
+.card-header-1 h2 {
+  color: #6686f1;
+  font-weight: 600;
+}
+
+.google-login img {
+  margin-left: 10px;
+}
+
+/* Hrms login form end */
+
+/* From page style */
+.formInputFields {
+  padding: 100px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.formInputFields .formInputFieldswrapper {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 15px;
+}
+
+.formInputFields .formInputFieldswrapper .fields {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.formInputFields .formInputFieldswrapper .fields .MuiFormControl-root {
+  width: 80%;
+}
+
+.formInput {
+  padding: 60px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.formInput .row {
+  row-gap: 20px;
+  padding: 40px 0 0;
+}
+
+p.MuiTypography-root.MuiTypography-body2.css-e784if-MuiTypography-root {
+  padding-left: 15px !important;
+}
+
+.css-1clxl53-MuiFormControl-root-MuiTextField-root {
+  /* width: 85%; */
+  margin-top: 18px !important;
+  /* border-radius: 51PX; */
+  /* margin-left: 10px !important; */
+
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 12px !important;
+}
+.formInput  .col-sm-6{
+  text-align: center;
+}
+/* form-datas */
+.form-datas{
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 20px;
+  padding: 50px;
+  border-radius: 15px;
+}
+.form-datas .row .col-sm-4{
+  padding: 20px;
+}
+.form-datas .row .col-sm-4 label{
+  font-size: 14px;
+  font-weight: 500;
+}
+.form-datas .row .col-sm-4 p{
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+.MuiToolbar-root.MuiToolbar-regular.css-r6ewbb-MuiToolbar-root{
+  justify-content: end;
+  margin-right:12px;
+}
+.continue{
+  padding: 15px 60px;
+  background-color: #ffcb09;
+  color:black;
+  border-radius: 20px;
+  margin: 20px 0;
+  font-weight: 600;
+  border: 1px solid #ffcb09;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.continue:hover{
+  background-color: red;
+  color: WHITE;
+}
