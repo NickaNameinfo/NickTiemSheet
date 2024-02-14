@@ -165,7 +165,7 @@ function App() {
       
         </Route>
 
-        <Route path="/Employee" element={<EmployeeDashboard />}></Route>
+        {/* <Route path="/Employee" element={<EmployeeDashboard />}></Route>
 
         <Route path="/TeamLead" element={<TeamLeadDashboard />}></Route>
 
@@ -173,6 +173,7 @@ function App() {
 
         <Route path="/login" element={<Login />}></Route>
         <Route path="/navbar" element={<Navbar />}></Route>
+        <Route path="/login" element={<Login />}></Route> */}
       </Routes>
     </BrowserRouter>
   );
