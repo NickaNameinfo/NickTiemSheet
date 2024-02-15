@@ -133,7 +133,7 @@ export default function Form() {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               {/* <DemoItem label="" className="kapil"> */}
               <DatePicker
-                label="Date Picker"
+                label="DOB"
                 slotProps={{ textField: { size: "Large" } }}
                 fullWidth
                 sx={{
@@ -191,27 +191,6 @@ export default function Form() {
           </div>
           <div className="col-sm-6">
             <Box
-              className="p-0"
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "85%" },
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "12PX", // Set the desired border radius
-                  backgroundColor: "white", // Set the background color to white
-                },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <TextField
-                id="standard-basic"
-                label="Enter Your UserName"
-                variant="outlined"
-              />
-            </Box>
-          </div>
-          <div className="col-sm-6">
-            <Box
               sx={{
                 width: "85%",
                 marginLeft: "7px",
@@ -229,7 +208,7 @@ export default function Form() {
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={age}
-                  label="dropdown list"
+                  label="Gender"
                   onChange={handleChange}
                   sx={{ width: "100%", borderRadius: "12px" }}
                 >
@@ -238,6 +217,48 @@ export default function Form() {
                   <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
               </FormControl>
+            </Box>
+          </div>
+          <div className="col-sm-6">
+            <Box
+              className="p-0"
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "85%" },
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "12PX", // Set the desired border radius
+                  backgroundColor: "white", // Set the background color to white
+                },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="standard-basic"
+                label="Enter Your Pan No"
+                variant="outlined"
+              />
+            </Box>
+          </div>
+          <div className="col-sm-6">
+            <Box
+              className="p-0"
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "85%" },
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "12PX", // Set the desired border radius
+                  backgroundColor: "white", // Set the background color to white
+                },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="standard-basic"
+                label="Enter Your Adhaar No"
+                variant="outlined"
+              />
             </Box>
           </div>
           <div className="text-center col-sm-12">

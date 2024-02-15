@@ -22,7 +22,7 @@ const FormDataList = () => {
             <p>nick.jpg</p>
           </div>
           <div className="col-sm-4">
-            <label htmlFor="">Date Picker</label>
+            <label htmlFor="">DOB</label>
             <p>19-04-2023</p>
           </div>
           <div className="col-sm-4">
@@ -34,12 +34,16 @@ const FormDataList = () => {
             <p>no 14,voc Street, Tnagar,chennai </p>
           </div>
           <div className="col-sm-4">
-            <label htmlFor="">dropdown list</label>
+            <label htmlFor="">Gender</label>
             <p>Male</p>
           </div>
           <div className="col-sm-4">
-            <label htmlFor="">gov details</label>
-            <p>Govt</p>
+            <label htmlFor="">Adhaar No</label>
+            <p>87576757865876</p>
+          </div>
+          <div className="col-sm-4">
+            <label htmlFor="">Pan No</label>
+            <p>IVFHB7647</p>
           </div>
         </div>
       </div>
