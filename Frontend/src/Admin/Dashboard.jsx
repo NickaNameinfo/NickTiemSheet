@@ -1,8 +1,9 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
-import commonData from "../../common.json";
+import commonData from "../../common.json"; 
+import Navbar from "../component/Navbar";
 
 function Dashboard() {
   const token = localStorage.getItem("token");
@@ -220,6 +221,12 @@ function Dashboard() {
                 </ul>
               </li>
             )}
+             <li>
+              <span className="material-symbols-outlined  fs-5 bi-power"></span>
+              <Link to="/Dashboard/Hrms"> 
+                <span className="txt_col">Hrms</span>
+              </Link>
+            </li>
 
             <li onClick={() => handleLogout()}>
               <span className="material-symbols-outlined  fs-5 bi-power"></span>
@@ -230,6 +237,7 @@ function Dashboard() {
           </ul>
         </div>
         <div className="col p-0 m-0 nicknametable">
+          <Navbar />
           <Outlet />
         </div>
       </div>
